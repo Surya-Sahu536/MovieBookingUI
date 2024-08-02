@@ -1,0 +1,43 @@
+<div class="container-fluid vh-100 d-flex">
+    <div class="row w-100 my-auto">
+        <div class="col-md-6 d-flex align-items-center justisfy-content-center">
+            <div class="card p-4 d-flex flex-column justisfy-content-between align-items-center" style="width:100%; max-width:400px; height: 95vh;">
+                <div class="card-body" style="flex: 1;">
+                    <div>
+                    <h5 class="card-title text-center bg-violet p-2">Book Ticket</h5>
+                    <form [formGroup]="ticketForm">
+                        <div class="lbl">
+                            <label class="label" for="loginId">Movie Name :</label>
+                            <label class="label" for="loginId">{{movie.key.movieName}}</label>
+                             
+                        </div>
+                        <br>
+                        <div class="lbl">
+                            <label class="label" for="firstName">Theater Name :</label>
+                            <label class="label" for="firstName">{{movie.key.theaterName}}</label>
+                        </div>
+                        <br>
+                        <div class="lbl">
+                            <label class="label" for="noOfTickets">No Of Tickets</label>
+                            <input class="form-control" placeholder="noOfTickets" formControlName="noOfTickets" type="text" id="noOfTickets"> 
+                        </div>
+                        <br>
+                        <div class="lbl">
+                            <label class="label" for="seatNumber">Seat Number</label>
+                            <input class="form-control" placeholder="seatNumber" formControlName="seatNumber" type="text" id="seatNumber"> 
+                        </div>
+                        <br>
+                        <div>
+                            <button (click)="OnBook()" class="btn btn-primary" type="button">Book</button>
+                        
+                            
+                            <button (click)="OnCancel()" class="btn btn-secondary" style="float: right;" type="button">Cancel</button>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

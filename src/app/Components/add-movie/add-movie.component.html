@@ -1,0 +1,41 @@
+<div class="container-fluid vh-100 d-flex">
+    <div class="row w-100 my-auto">
+        <div class="col-md-6 d-flex align-items-center justisfy-content-center">
+            <div class="card p-4 d-flex flex-column justisfy-content-between align-items-center" style="width:100%; max-width:400px; height: 95vh;">
+                <div class="card-body" style="flex: 1;">
+                    <div>
+                    <h5 class="card-title text-center bg-violet p-2">Add Movie</h5>
+                    <form [formGroup]="movieForm">
+                        <div class="lbl">
+                            <label class="label" for="movieName">Movie Name</label>
+                            <input class="form-control" placeholder="Movie Name" formControlName="movieName" type="text" id="movieName"> 
+                        </div>
+                        <div class="lbl">
+                            <label class="label" for="theaterName">Theater Name</label>
+                            <input class="form-control" placeholder="Theater Name" formControlName="theaterName" type="text" id="theaterName"> 
+                        </div>
+                        <div class="lbl">
+                            <label class="label" for="noOfTicketsAllocated">No Of Tickets Allocated</label>
+                            <input class="form-control" placeholder="No Of Tickets Allocated" formControlName="noOfTicketsAllocated" type="text" id="noOfTicketsAllocated"> 
+                        </div>
+                        <div class="lbl">
+                            <label class="label" for="noOfTicketsRemaining">No Of Tickets Remaining</label>
+                            <input class="form-control" placeholder="No Of Tickets Remaining" formControlName="noOfTicketsRemaining" type="text" id="noOfTicketsRemaining"> 
+                        </div>                       
+                        <div class="lbl">
+                            <label class="label" for="ticketStatus">Ticket Status</label>
+                            <input class="form-control" placeholder="Ticket Status" formControlName="ticketStatus" type="text" id="ticketStatus"> 
+                        </div>
+                        <br>
+                        <div>
+                            <button (click)="OnAdd()" class="btn btn-primary" type="button">Create</button>
+                        
+                            <button (click)="OnCancel()" class="btn btn-secondary" style="float: right;" type="button">Cancel</button>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

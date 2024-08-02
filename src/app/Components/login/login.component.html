@@ -1,0 +1,96 @@
+<div class="container-fluid vh-100 d-flex">
+    <div class="row w-100 my-auto">
+        <div class="col-md-6 d-flex align-items-center justisfy-content-center flex-column bg-violet">
+            <br>
+            <br>
+            <div class="image-container mb-3">
+            <img src="assets/welcome.jpg" class="fixed-width img-fluid" >
+            </div>
+            <div class="image-container">
+            <img src="assets/cine.jpg" class="fixed-width img-fluid">
+            </div>
+        </div>
+        <div class="col-md-6 d-flex align-items-center justisfy-content-center">
+            <div class="card p-4 d-flex flex-column justisfy-content-between align-items-center" style="width:100%; max-width:400px; height: 95vh;">
+                <div class="card-body" style="flex: 1;">
+                    <div>
+                    <h5 class="card-title text-center bg-violet p-2">User Login</h5>
+                    <form [formGroup]="loginForm">
+                        <div class="lbl">
+                            <label class="label col-sm-4" for="username">User Name</label>
+                            <input class="box col-sm-8" placeholder="User Name" formControlName="userName" type="text" id="username"> 
+                        </div>
+                        <div class="lbl">
+                            <label class="label col-sm-4" for="password">Password</label>
+                            <input class="box col-sm-8" placeholder="Password" formControlName="password" type="password" id="username"> 
+                        </div>
+                        <div class="lbl">
+                            <label class="label col-sm-4" for="userRole">User Role</label>
+                            <select class="box col-sm-8" formControlName="userRole" type="text" id="userRole">
+                                <option>User</option>
+                                <option>Admin</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <button (click)="OnLogin()" class="btn btn-primary" type="button" style="float: right; margin-top: 10px;">Login</button>
+                        </div>
+                        <br>
+                        <br>
+                        <div>
+                            <span class="label col-sm-8">Forgot Password? </span>
+                            <button (click)="OnReset()" class="btn btn-danger" type="button">Reset</button>
+                        </div>
+
+
+                        <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                        <div>
+                        
+                            <span class="label col-md-8">Dont have an account? Create </span>
+                            
+                            <button (click)="OnSignup()" class="btn btn-primary" type="button">Signup</button>
+                        </div>
+                        
+                    </form>
+                    
+                    
+                    </div>
+                </div>
+            </div>
+            <div class="card p-4 d-flex flex-column justisfy-content-between align-items-center" style="width:100%; max-width:200px; height: 95vh;">
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--<hr class="my-4">
+                    <div class="mt-auto">
+                    <h5 class="card-title text-center bg-violet">Admin  Login</h5>
+                    <form [formGroup]="adminloginForm">
+                        <div class="lbl">
+                            <label class="label col-sm-4" for="adminusername">User Name</label>
+                            <input class="box col-sm-8" placeholder="User Name" formControlName="adminuserName" type="text" id="adminusername"> 
+                        </div>
+                        <div class="lbl">
+                            <label class="label col-sm-4" for="adminpassword">Password</label>
+                            <input class="box col-sm-8" placeholder="Password" formControlName="adminpassword" type="password" id="adminusername"> 
+                        </div>
+                        <div>
+                            <button (click)="OnAdminLogin()" class="btn btn-primary" type="button">Login</button>
+                        </div>
+                    </form>
+                -->          
+
+
+
+

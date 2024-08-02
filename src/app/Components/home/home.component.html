@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-light  bg-violet">
+  <span class="navbar-brand" href="/" style="padding-left: 5px;"><b>Ticket Booking</b></span>
+  <button class="navbar-toggler" type="button" data-toogle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">           
+          <li class="nav-item active">
+              <a class="nav-link" routerLink="/movies/{{userid}}">Movie Center</a>
+          </li>
+          <li class="nav-item active">
+              <a class="nav-link" routerLink="/account/{{userid}}">Account</a>
+          </li>
+          <li class="nav-item active">
+              <a class="nav-link" routerLink="/bookings/{{userid}}">My Bookings</a>
+          </li>
+          <li></li>
+      </ul>       
+  </div>
+  <div class="logout " style="float: right; padding-right:10px;"><button class="btn btn-danger" (click)="OnLogout()">Logout</button></div>        
+</nav>
+
+<div>
+  <table class="table table-striped border-primary p-2">
+    <thead class="thead-dark">
+        <th>Name</th>
+        <th>Theatre</th>
+        <th>Tickets Remaining</th>
+        <th>Booking Availability</th>
+        <th>Book</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of movieList | paginate:{itemsPerPage:8,currentPage:page,totalItems:totalLength}">
+        <td>{{item.key.movieName}}</td>
+        <td>{{item.key.theaterName}}</td>
+        <td>{{item.noOfTicketsRemaining}}</td>
+        <td>{{item.ticketStatus}}</td>
+        <td><button (click)="onBookTicket(item.id)">Book</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="pagination">
+    <pagination-controls (pageChange)="page=$event"></pagination-controls>
+  </div>
+</div>

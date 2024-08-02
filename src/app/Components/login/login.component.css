@@ -1,0 +1,55 @@
+.container-fluid {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    width: 100%;
+    max-width: 400px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-body{
+    width: 100%;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+.img-container{
+    margin-top: 20%;
+    width: 100%;
+    max-width: fit-content;
+    background-color: blue;
+}
+
+.bg-violet{
+    background-color: blueviolet;
+}
+
+
+hr.my-4{
+    margin-top: auto;
+}
+
+.fixed-width {
+    width: 400px;
+    height: auto;
+}
+
+
+.col-md-6.d-flex.align-items-center.justisfy-content-center{
+        align-items: center;
+        
+}
+
+.lbl{
+    margin-top: 10px;
+}

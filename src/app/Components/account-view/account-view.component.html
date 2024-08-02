@@ -1,0 +1,120 @@
+<nav class="navbar navbar-expand-lg navbar-light  bg-violet">
+    <span class="navbar-brand" href="/" style="padding-left: 5px;"><b>Ticket Booking</b></span>
+    <button class="navbar-toggler" type="button" data-toogle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">           
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/movies/{{userid}}">Movie Center</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/account/{{userid}}">Account</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/bookings/{{userid}}">My Bookings</a>
+            </li>
+            <li></li>
+        </ul>       
+    </div>
+    <div class="logout" style="float: right; padding-right:10px;"><button class="btn btn-danger" (click)="OnLogout()">Logout</button></div>        
+</nav>
+    
+
+  
+    
+        
+        <div class="off-md-4 col-md-6 mx-auto" *ngIf="flag===0">
+            <div class="card p-5 d-flex flex-column justisfy-content-between " style="width:100%; max-width:600px; height: 80vh;">
+                <div class="card-body" style="flex: 1;">
+                    <div>
+                    <h5 class="card-title text-center bg-violet p-2">Account Details</h5>
+                    
+                        <div class="lbl">
+                            <label class="label" for="loginId">User Id</label>
+                            <span class="value" for="loginId">{{cust.loginId}}</span>
+                        </div>
+                        <div class="lbl">
+                            <label class="label" for="firstName">First Name</label>
+                            <span class="value" for="firstName">{{cust.firstName}}</span>
+                        </div>
+                        <div class="lbl">
+                            <label class="label" for="lastName">Last Name</label>
+                            <span class="value" for="lastName">{{cust.lastName}}</span>
+                        </div>
+                        <div class="lbl">
+                            <label class="label" for="emailId">Email Id</label>
+                            <span class="value" for="emailId">{{cust.emailId}}</span>
+                        </div>
+                        
+                        <div class="lbl">
+                            <label class="label" for="contactNumber">Contact Number</label>
+                            <span class="value" for="contactNumber">{{cust.contactNumber}}</span>
+                        </div>
+                        <div *ngIf="flag===0">
+                            
+                            <button (click)="OnModify()" class="btn btn-primary" style="float: right;" type="button">Modify</button>
+                        </div>
+
+                        
+
+
+                        
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="off-md-4 col-md-6 mx-auto" *ngIf="flag===1">
+        <div class="card p-5 d-flex flex-column justisfy-content-between " style="width:100%; max-width:600px; height: 80vh;">
+            <div class="card-body" style="flex: 1;">
+                <div>
+                <h5 class="card-title text-center bg-violet p-2">Account Details</h5>
+                <form [formGroup]="userForm">
+                    <div class="lbl">
+                        <label class="label" for="loginId">User Id</label>
+                        <span class="value" for="loginId">{{cust.loginId}}</span>
+                    </div>
+                    <div class="lbl">
+                        <label class="label" for="firstName">First Name</label>
+                        <input class="form-control" placeholder="Password" formControlName="firstName" type="text" id="firstName"> 
+                    </div>
+                    <div class="lbl">
+                        <label class="label" for="lastName">Last Name</label>
+                        <input class="form-control" placeholder="User Name" formControlName="lastName" type="text" id="lastName"> 
+                    </div>
+                    <div class="lbl">
+                        <label class="label" for="emailId">Email Id</label>
+                        <input class="form-control" placeholder="Password" formControlName="emailId" type="text" id="emailId"> 
+                    </div>
+                    
+                    <div class="lbl">
+                        <label class="label" for="contactNumber">Contact Number</label>
+                        <input class="form-control" placeholder="Password" formControlName="contactNumber" type="text" id="contactNumber"> 
+                    </div>
+                    
+
+                    <div *ngIf="flag===1">
+                        
+                        <button (click)="OnCancel()" class="btn btn-secondary" style="width: 30%;" type="button">Cancel</button>
+
+                        <button (click)="OnUpdate()" class="btn btn-primary" style="float: right; width: 30%;" type="button">Update</button>
+
+                    </div>
+                    </form>
+
+
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+  
+  
